@@ -1,0 +1,51 @@
+.check {
+    float: left;
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.check:hover {
+    background-color: aqua;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.check {
+    background-color: yellow;
+}
+
+.delete {
+    float: right;
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}
+
+.delete:hover {
+    background-color: black;
+}
+
+.todo {
+    font-size: 30px;
+    padding: 20px 0px;
+    border-bottom: 3px solid black;
+}
+
+p {
+    display: inline-block;
+    margin: 0px;
+}
+
+button {
+    background: none;
+    position: relative;
+    cursor: pointer;
+}

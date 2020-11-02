@@ -1,0 +1,533 @@
+div#navbar {
+  width: 100%;
+  min-width: 800px; /*not sure if necessary for page icons to stay "aligned" */
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  position: fixed; /* Set the navbar to fixed position */
+  height: 80px;
+  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+  background-color: white;
+  z-index: 2;
+  }
+
+#navbar img {
+  padding: 10px;
+  top: 34px;
+  }
+
+img.logo {
+  height: 36px;
+  width: 36px;
+  position: relative;
+  left: 240px;
+  margin-top: -40px;
+}
+img#leftlogo {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  right: 250px;
+  margin-top: -50px;
+  margin-bottom: 4px;
+  margin-right: 5px;
+}
+
+img#mainlogo {
+  height: 35px;
+  width: 110px;
+  position: relative;
+  right: 260px;
+  margin-top: -20px;
+}
+input#search {position: relative; text-align: center;}
+
+div#navstuff {
+  display: inline-block;
+}
+#search {
+  top: 32px;
+  display: block;
+  margin-top: -42px;
+  padding: 6px;
+  position: relative;
+  left: 15px;
+  width: 150px;
+  height: 8px;
+
+}
+
+input#search{
+    background-image: url(https://previews.123rf.com/images/vgraphix/vgraphix1803/vgraphix180300014/97101811-search-or-magnifying-glass-icon-in-black-line-flat-style-vector-illustration-isolated-on-white-backg.jpg);
+    background-position: 46px 5px;
+    background-size: 12px;
+    background-repeat: no-repeat;
+}
+
+input#search:focus {
+  background-color: #e0e1e0;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+/* posts and the side bar */
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 700px;
+  margin: 0 auto;
+}
+div#post1 {
+  background-color: white;
+  float: left;
+  width: 450px;
+  height: 493px;
+  margin-top: 100px;
+  border: 1px solid #dbdbdb;
+}
+div#post2 {
+  background-color: white;
+  float: left;
+  width: 450px;
+  height: 460px;
+  margin-top: 100px;
+  border: 1px solid #dbdbdb;
+  position: relative;
+  bottom: 60px;
+}
+div#suggestions{
+  background-color: white;
+  float: left;
+  width: 450px;
+  height: 160px;
+  margin-top: 100px;
+  border: 1px solid #dbdbdb;
+  position: relative;
+  bottom: 115px
+}
+p#sugg {
+  position: relative;
+  right:7px;
+  bottom: 4px;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 10px;
+  margin-left: 20px;
+  color: grey;
+}
+
+p#seeall{
+  color: #405DE6;
+  float: right;
+  position: relative;
+  bottom: 34px;
+  right: 15px;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 9px;
+}
+
+/*a ton of sidebar stuff here */
+.sidebar {
+  float: left;
+  width: 250px;
+  margin-top: 100px;
+  overflow-y: scroll;
+  overflow-x: hidden; /* isnt working in loaded page, prof clapp and grace (ta) all unsure whats wrong EDIT: works sometimes now? Seems to depend on screen*/
+  height: 300px;
+}
+
+/* just something extra that wasn't incorporated: could also keep
+stories bar at a fixed vertical spot and have it scale horizontally. */
+/*
+.rightside {
+  position: fixed;
+  left: 63%;
+}
+*/
+
+hr.sidebarlines {
+  background-color: #dbdbdb;
+  width: 220px;
+  color: #dbdbdb;
+  border: none;
+  height: 1px;
+}
+
+img#mystorypic {
+  position: relative;
+  left: 7px;
+  bottom: 4px;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+p#myusername { /* the horizontal positioning of this looks a bit diff on diff screens */
+  float: right;
+  position: relative;
+  right: 86px;
+  top: 5px;
+  font-weight: bold;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 10px;
+}
+
+p#myname {
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 10px;
+  color: grey;
+  position: relative;
+  bottom: 35px;
+  left: 69px;
+}
+
+hr#firstline {
+  position: relative;
+  bottom: 30px;
+}
+
+p#stories {
+  font-family: 'proxima-nova', sans-serif;
+  font-weight: normal;
+  color: grey;
+  font-size: 11px;
+  position: relative;
+  bottom: 35px;
+  left: 15px;
+}
+p#watchall {
+  font-family: 'proxima-nova', sans-serif;
+  font-weight: bold;
+  color: #46474a;
+  font-size: 9px;
+  float: right;
+  position: relative;
+  bottom: 66px;
+  right: 17px;
+}
+
+img.storypics {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  border-style: solid;
+  border-color: #E1306C;
+  border-width: 2px;
+  position: relative;
+  left: 16px;
+  bottom: 37px;
+}
+
+p.storyusernames {
+  position:relative;
+  bottom: 82px;
+  left: 69px;
+  font-weight: bold;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 10px;
+}
+p.storytimes {
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 9px;
+  color: grey;
+  position: relative;
+  bottom: 89px;
+  left: 69px;
+}
+
+div#secondstory {
+  position: relative;
+  bottom: 48px;
+}
+div#thirdstory {
+  position: relative;
+  bottom: 95px;
+}
+div#fourthstory {
+  position: relative;
+  bottom: 142px;
+}
+
+div#fifthstory {
+  margin-top: -190px;
+}
+div#sixthstory {
+  margin-top: -48px;
+}
+
+div.stuffunderstories {
+  position:relative;
+  right: 8px;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 9px;
+  color: #b3b3b3;
+}
+p.randomtext {
+  position: relative;
+  left: 17px;
+}
+p#copyright {
+  margin-top: 17px;
+}
+
+/* all the footer links */
+a.links:link {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+a.links:visited {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+a.links:hover {
+  color: #bfbfbf;
+  text-decoration: none;
+}
+a.links:active {
+  color: #5879cc;
+  text-decoration: none;
+}
+/* end of right side stuff */
+
+img.profile {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+img.suggpics {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+
+img#post1img {
+  height: auto;
+  width: 450px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+img#post2img {
+  height: auto;
+  width: 450px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.like{
+  height: 20px;
+  width: 20px;
+  padding: 3px;
+}
+img.comment{
+  height: 20px;
+  width: 20px;
+  padding: 3px;
+}
+img.share{
+  height: 20px;
+  width: 20px;
+  padding: 3px;
+}
+img.dots {
+  height: 12px;
+  width: 12px;
+  float: right;
+  margin-right: 17px;
+  margin-top: 5px;
+}
+
+img.bookmark {
+  height: 20px;
+  width: 20px;
+  padding: 3px;
+  float: right;
+  margin-right: 10px;
+}
+
+div.icons {
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+div.postcontent {
+  position: relative;
+  bottom: 10px;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 10px;
+  margin-left: 20px;
+}
+
+
+p.likes {
+  font-weight: bold;
+}
+p.user_description {
+  font-weight: bold;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 10px;
+}
+span.descrip {
+  font-weight: normal;
+}
+span.hashtags {
+  font-weight: normal;
+  color: #5879cc;
+}
+p.timeposted {
+  font-weight: normal;
+  color: grey;
+  font-size: 8px;
+}
+p#topuser {
+  position: relative;
+  bottom: 30px;
+  left: 40px;
+}
+p#seconduser {
+  position: relative;
+  bottom: 30px;
+  left: 40px;
+}
+
+div.everything {
+  position: relative;
+  bottom: 24px;
+}
+hr.postline {
+  width: 420px;
+  background-color: #f2f2f2;
+  color: #f2f2f2;
+  height: 1px;
+  border: none;
+}
+input.comment {
+  margin-left: 15px;
+  border: none;
+}
+
+input.comment:focus {
+  outline: none;
+}
+
+div.suggested {
+  background-color: white;
+  width: 110px;
+  height: 130px;
+  margin-top: 100px;
+  border: 1px solid #dbdbdb;
+  position: relative;
+  bottom: 60px;
+}
+
+div#firstone {
+  float: left;
+  position: relative;
+  left: 12px;
+  bottom: 110px;
+}
+img.suggpics {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+p.suggnames {
+  bottom: 10px;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+img.x {
+  float: right;
+  width:10px;
+  height:10px;
+  position: relative;
+  bottom: 38px;
+  right: 8px;
+}
+img.verified {
+  width: 10px;
+  height: 10px;
+  position:relative;
+  bottom: 25px;
+  left: 80px;
+}
+img#bohrid {
+  left:87px;
+}
+img#feynid {
+  left:82px;
+}
+p.rando {
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 10px;
+  color: grey;
+  text-align: center;
+  position:relative;
+  bottom: 35px;
+}
+img.followbutton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60px;
+  height: 28px;
+  position: relative;
+  bottom: 36px;
+}
+
+div.nameandverify {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+div#secondone {
+  position: absolute;
+  left: 171px;
+  bottom: 6px;
+
+}
+div#thirdone {
+  position: absolute;
+  left: 326px;
+  bottom: 6px;
+  z-index: 0;
+}
+
+img#suggestionsarrow {
+  position: relative;
+  left: 315px;
+  top:50px;
+  width: 17px;
+  height: 18px;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 768px) { /* not sure diff between media queries, seems to be three ways to do it */
+    [class*="rightside"] {
+      display:none;
+    }
+    [class*="posts"] {
+      display: block;
+      margin-left: 130px;
+    }
+    [class*="topofpoststuff"] {
+      display: block;
+      margin-left: 0px;
+    }
+  }
+
+/* 10/10/19 */

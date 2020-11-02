@@ -1,0 +1,73 @@
+body {
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+.toDo {
+    margin-left: 15%;
+    margin-right: 15%;
+    color: black;
+    overflow: scroll;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+#toDoDiv {
+    width: 70%;
+    height: auto;
+    margin-top: 10px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ-fShVIg7BVR9piwxAldC5wRThgrL9kJA05ivyndS3oowZWYokg&s);
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+#toDoName {
+    text-align: center;
+    font-size: 22px;
+}
+
+.toDoList {
+    text-align: left;
+    font-size: 16px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#toDoNew {
+    margin-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.bleh {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ-fShVIg7BVR9piwxAldC5wRThgrL9kJA05ivyndS3oowZWYokg&s);
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 5px;
+}
+
+.complete {
+    text-decoration: line-through;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+button {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+button:hover {
+    background-color: lightblue;
+}
+
+input {
+    border-radius: 5px;
+    width: 50%;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+input:focus {
+    background-color: lightblue;
+}

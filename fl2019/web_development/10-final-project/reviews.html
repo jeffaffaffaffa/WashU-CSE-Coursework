@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Food Review Final Project
+    </title>
+    <link rel = "stylesheet" href = "style.css">
+    <link rel = "stylesheet" href = "reviews.css">
+</head>
+  <body>
+    <div class ="headerbar">
+      <span class = "hentry1"><a href="index.html"><img id= "mainlogo" src = "logo.png" alt = "thelogo" title = "ramentitle"></a></span>
+      <div class = "item"><a href = "index.html"><div class="item_text">Home</div></a></div>
+      <div class = "item"><a href = "aboutus.html"><div class="item_text">About Us</div></a></div>
+      <div class = "item"><a href = "reviews.html"><div class="item_text">Reviews</div></a></div>
+      <form id = "searchbar">
+        <input id = "search" type= "search" placeholder= "Search"/>
+      </form>
+    </div>
+
+    <div class="row">
+      <p id = "title"> Highest Ranked Restaurants </p>
+
+      <div class ="firstrest">
+      <div class = "col1">
+      <div class="column">
+        <div id="rest1" class="restaurants">
+          <div class="restSlides">
+            <img class="mySlides" style="height: 350px" src="https://byoblikeaboss.com/wp-content/uploads/2019/06/familyDimSumMingHin01.jpg" alt="dumplings">
+            <img class="mySlides" style="height: 350px" src="http://gwiv.com/MingHin25.jpg" alt="rice">
+            <img class="mySlides" style="height: 350px" src="https://www.chicagotribune.com/resizer/QquEM-NN7PNEt4PvlfOjMjKo0lY=/800x450/top/www.trbimg.com/img-5a7c80eb/turbine/ct-1518108899-4ylduqkma7-snap-image" alt="noodles">
+
+            <button class="button" id="button1" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="button" id="button2" onclick="plusDivs(1)">&#10095;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class = "col2">
+      <div class="column">
+        <div id="introtext" class="restaurants">
+          <p class="restname">Introduction</p>
+          <p class="descrip1"> From developing our start-up, ChowNow, we have found the highest ranked Chinese foods in the area and we wanted to share them with you all. </p>
+          <p class = "descrip1">With a combination of ratings and types of food, here are the highest ranking restaurants in the Chicago area. These are some of our favorites and we have felt that this represents Chinese culture well.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div id="rest1info" class="restaurants">
+      <p class="restname">1. MingHin Cuisine</p>
+      <p class="descrip">MingHin Cuisine is one the largest Dim Sum restaurants in Chicago, specializing in traditional
+      and contemporary Cantonese dim sum. Good food, fair prices, and an incredible atmosphere make MingHin land our number one
+      pick! A must-try for first-timers to Chicago's Chinatown.</p>
+      <p class="moreinfo">For more info, click <a href="https://www.minghincuisine.com">here</a>.</p>
+      <table>
+        <tr>
+          <th>Hours:</th>
+          <th>Mon-Fri</th>
+          <th>Sat, Sun</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>11AM-10PM</th>
+          <th>11AM-10PM</th>
+        </tr>
+      </table>
+      <div class = "photo">
+      <img id= "xianphoto" src = "348s.jpg" alt = "thelogo" title = "noodles">
+    </div>
+
+    </div>
+
+    <div id="rest1info" class="restaurants">
+      <p class="restname">2. Xi'an Dynasty Cuisine</p>
+      <p class="descrip"> Xi'an Dynasty Cuisine is the second ranked Chinese restaurant in Chicago,specializing in authentic Xi'an style dishes such as Saozi noodles, cold rice noodle, pulled pork burger, ground beef pancake, beef paomo, hot and sour dumpling soup, crepes and stone pot soup.</p>
+      <p class="moreinfo">For more info, click <a href="https://www.yelp.com/biz/xian-dynasty-cuisine-chicago?osq=Chicago+Chinatown">here</a>.</p>
+      <table>
+        <tr>
+          <th>Hours:</th>
+          <th>Mon-Fri</th>
+          <th>Sat, Sun</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>11AM-9PM</th>
+          <th>11AM-9PM</th>
+        </tr>
+      </table>
+      <div class = "photo">
+      <img id= "xianphoto" src = "xian.jpg" alt = "thelogo" title = "noodles">
+    </div>
+
+    </div>
+
+    <div id="rest1info" class="restaurants">
+      <p class="restname">3. MCCB Chicago</p>
+      <p class="descrip">The top specialty from MCCB Chicago is Charcoal Grilled Whole Fish, a street style food originated from Chongqing, China. They charcoal grill the wild caught tilapia first, then soak the fish in a hot chili broth filled pan, served on table on top of stylish and exquisitely carved stand, with continual charcoal grill as a must process to enjoy this dish.</p>
+      <p class="moreinfo">For more info, click <a href="https://www.mccbchicago.com/">here</a>.</p>
+      <table>
+        <tr>
+          <th>Hours:</th>
+          <th>Mon-Fri</th>
+          <th>Sat, Sun</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>11AM-10PM</th>
+          <th>11AM-11PM</th>
+        </tr>
+      </table>
+      <div class = "photo>">
+      <img id= "xianphoto" src = "o.jpg" alt = "thelogo" title = "noodles">
+    </div>
+    </div>
+
+
+    <div class="content">
+        <div class="bleh">
+            <div class="toDo" id="toDoName">Comments:</div>
+            <div class="row" id="toDoNew">
+                <input type="text" class="col" id="userInput">
+                <button class="col" id="toDoButton">add comment!</button>
+            </div>
+        </div>
+        <div class="toDo" id="toDoDiv">
+            <div class="toDoList" id="toDoList"></div>
+        </div>
+    </div>
+
+    <div class = "mainicon7">
+    <div class = "link1">
+      <ul id = "linklist1">
+        <li class = "title"> Utilities </li>
+        <li><a href = "#"> News</a></li>
+        <li> <a href = "#">Partners </a></li>
+        <li> <a href = "#">Suppliers </a></li>
+        <li> <a href = "#">Best Practices</a></li>
+        <li> <a href = "#">Sustainable Food</a></li>
+
+      </ul>
+    </div>
+    <div class = "link2">
+      <ul id = "linklist2">
+        <li class = "title"> Categories </li>
+        <li><a href = "#"> Japanese</a></li>
+        <li> <a href = "#">Chinese</a></li>
+        <li> <a href = "#">Korean</a></li>
+        <li> <a href = "#">Taiwanese</a></li>
+        <li> <a href = "#">Thai </a></li>
+      </ul>
+    </div>
+    <div class = "link3">
+      <ul id = "linklist3">
+        <li class = "title"> Popular Links</li>
+        <li> <a href = "#">Orders</a></li>
+        <li> <a href = "#">Map</a> </li>
+        <li> <a href = "#">Food Tours</a> </li>
+        <li> <a href = "#">Deliveries</a> </li>
+        <li> <a href = "#">Licensing</a></li>
+      </ul>
+    </div>
+    <div class = "link4">
+      <ul id = "linklist4">
+        <li class = "title"> Following ChowNow</li>
+        <li> <a href = "#">Instagram</a></li>
+        <li> <a href = "#">Facebook</a></li>
+        <li> <a href = "#">Twitter</a></li>
+        <li> <a href = "#">YouTube</a></li>
+        <li> <a href = "#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- list  -->
+<script src = "reviews.js" type = "text/javascript"></script>
+<script src = "script.js" type = "text/javascript"></script>
+  </body>
+</html>

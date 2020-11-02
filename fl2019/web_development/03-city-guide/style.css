@@ -1,0 +1,189 @@
+body {
+  background-color: powderblue;
+  margin: 0;
+  }
+
+div#intro {
+  padding-top: 150px; /* shifts content down so header bar isn't blocking */
+}
+
+h1#title {
+  font-style: oblique;
+  text-decoration : underline;
+  text-align: center;
+  font-size: 30pt;
+  background-color: white;
+  color: black;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 3px #666666;
+}
+h2 {
+  text-align: center;
+  font-size: 24pt;
+  background-color: white;
+  color: red;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 3px #666666;
+}
+h3 {
+  text-align: center;
+  font-size: 20pt;
+  background-color: white;
+  color: black;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 3px #666666;
+}
+div#list_of_attractions,#topthing {
+  text-align: center;
+  font: 18px arial, sans-serif
+}
+
+ol#first_list { /* four things for first list */
+  text-align: center;
+  font: 18px arial, sans-serif;
+  background-color: #D3D3D3;
+  font-weight: 600;
+}
+
+div#topthing {
+  color: black;
+  background-color: yellow;
+}
+.pics {
+  display: block;
+  margin-left: auto; /* from assignment 3 but also for 4, centers pics */
+  margin-right: auto; /* from assignment 3 but also for 4, centers pics */
+  width: 50%; /* from assignment 3 but also applies to 4, changing width */
+}
+
+iframe#map {
+  width: 600px;
+  height: 450px;
+  margin: 0 auto;
+  display: block;
+}
+
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: purple;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: cyan;
+}
+
+p {
+  background-color: transparent;
+  color: black;
+  text-indent: 10px;
+  text-align: left;
+  font: 18px arial, sans-serif, monospace;
+  font-weight: 600;
+  line-height: 1.4em;
+  border-style: solid; /* added for assignment 4 for border stuff*/
+  border-width: 2px; /* added for assignment 4 */
+  border-color: red green blue yellow; /* added for assignment 4 */
+  box-shadow: 5px 10px; /* added for 4, box shadow */
+  padding: 10px; /* added for 4, padding for box */
+  margin: 15px; /* added for 4, margin around box */
+}
+
+table#t01, th, td { /* more than 4 table styling things */
+  border: 1px solid black;
+  border-spacing: 5px 15px;
+  padding: 5px;
+  border-collapse: collapse;
+  margin-left:auto; /* from assignment 3 but also for 4, centers table */
+  margin-right:auto; /* from assignment 3 but also for 4, centers table */
+}
+
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+  background-color: #fff;
+}
+table#t01 tr:hover {
+  background-color: yellow;
+}
+
+input[type=submit] { /* lots of form stuff from 3, applies to 4 */
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  text-shadow: 1px 1px 3px #666666;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* rest of css file is messing with header and column stuff */
+
+/* The navigation bar stuff*/
+h1#a1 {
+  color: white;
+  font-style: oblique;
+  text-decoration : underline;
+  text-align: left;
+  font-size: 30pt;
+  padding: 4px 16px;
+}
+
+.navbar {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  height: 150px;
+  width: 98%; /* almost full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* columns */
+.column {
+  margin-left: 10px;
+  float: left;
+  width: 31%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* three equal columns */
+  grid-column-gap: 20px;
+}
+/* 9/25/19, assignment 4 */

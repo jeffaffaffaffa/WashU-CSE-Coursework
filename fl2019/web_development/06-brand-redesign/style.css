@@ -1,0 +1,520 @@
+body {
+  /* background-color: #F6F6F6; */
+}
+
+#stuffabovenav {
+  width: 100%;
+  background-color: #292927;
+  height: 20px;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+#bigcontainer {
+  width: 100%;
+  background-color: white;
+}
+
+#thetwothings {
+  width:830px;
+  margin: auto;
+}
+#thetwothings a:link {
+  color: white;
+  text-decoration: none;
+}
+#thetwothings a:visited {
+  color: white;
+  text-decoration: none;
+}
+#thetwothings a:hover {
+  color: white;
+  text-decoration: underline;
+}
+#thetwothings a:active {
+  color: white;
+  text-decoration: none;
+}
+#thetwothings a {
+  font-size: 12px;
+}
+
+a#left {
+  float: left;
+  margin-top: 2px;
+}
+a#right {
+  float: right;
+  margin-top: 2px;
+}
+
+#navstuff {
+  width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#alloftopstuff {
+  background-color: white;
+  margin-top: 0px;
+}
+
+#pagecontent{
+  margin-top: 1px;
+}
+
+#gridcontainer {
+  display: inline-grid;
+  grid-template-columns: 130px 130px 130px 130px 130px;
+}
+
+#huawei_logo {
+  float: left;
+  height: auto;
+  width: 150px;
+  padding-top: 25px;
+  padding-right: 45px;
+}
+
+.grid-item {
+  width: 100px;
+  padding: 1px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 12px;
+  border: none;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 14px;
+}
+
+.dropbtn:hover {
+  color: red;
+}
+
+input[type=text] {
+  width: 15px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  border: none;
+}
+input[type=text]:focus {
+  width: 100%;
+  height: 18px;
+  font-size: 12px;
+  background-position: right;
+  background-size: 12px;
+
+}
+input[type=text] {
+  background-image: url(https://previews.123rf.com/images/vgraphix/vgraphix1803/vgraphix180300014/97101811-search-or-magnifying-glass-icon-in-black-line-flat-style-vector-illustration-isolated-on-white-backg.jpg);
+  background-size: 18px;
+  background-repeat: no-repeat;
+  float: right;
+  margin-top: 23px;
+  margin-right: 20px;
+}
+
+#alloftopstuff {
+  box-shadow: 0px 3px #f0f0f0;
+}
+
+#pagecontent, .pagestuff, #huaweibanner {
+  width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#huaweibanner {
+  box-shadow: 0px 2px #f0f0f0;
+  z-index: -1;
+}
+
+#products {
+  width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 120px;
+}
+
+#gridcontainer2 {
+  display: inline-grid;
+  grid-template-columns: 220px 220px 220px;
+}
+
+.grid-item2 {
+  width: 220px;
+  height: 120px;
+
+}
+
+.stuffinside {
+  width: 220px;
+  height: 100px;
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-color: lightgrey;
+  position: relative;
+  top: 10px;
+}
+
+.grid-image {
+  width: 70px;
+  position: relative;
+  left: 20px;
+  top: 20px;
+}
+
+.ingridimg {
+  width: 40px;
+}
+
+.ingridtext {
+  width: 120px;
+  position:relative;
+  left: 80px;
+  bottom: 70px;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+.top {
+  font-weight: bold;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 15px;
+}
+
+.belowtop {
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 13px;
+  color: #4B4B4B;
+  line-height: 18px;
+}
+
+#products {
+  background-color: white;
+  position: relative;
+  bottom: 50px;
+  border-radius: 7px;
+  box-shadow: 0px 5px #f0f0f0;
+}
+
+#nextsection {
+  width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#gridcontainer3 {
+  display: inline-grid;
+  grid-template-columns: 415px 415px;
+}
+
+#persononbeach {
+  background-color: #D1D9E4;
+  width: 320px;
+  border-radius: 5px;
+  height: 430px;
+}
+
+#person {
+  width: 320px;
+  border-radius: 5px;
+}
+
+#topofinsights {
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 12px;
+  color: #555555;
+}
+
+.insights {
+  font-weight: bold;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 22px;
+  line-height: 10px;
+}
+
+#bottomofinsights {
+  font-weight: bold;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 14px;
+}
+
+#insights {
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+#matephone {
+  border-radius: 5px;
+  width: 415px;
+  height: 280px;
+  background-color: #5CB8DF;
+}
+
+#mate {
+  width: 220px;
+  color: #DDEAF0;
+  line-height: 18px;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 16px;
+  margin-left: 170px;
+  margin-top: 70px;
+}
+
+#mate30 {
+  width: 210px;
+}
+
+#phone {
+  width: 200px;
+  position: relative;
+  bottom: 198px;
+  right: 62px;
+  z-index: 10;
+}
+
+#mediapad {
+  width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#m5lite {
+  width: 830px;
+  margin-bottom: 20px;
+}
+
+#containerr {
+  width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#newsection {
+  display: inline-grid;
+  grid-template-columns: 415px 415px;
+}
+
+#topofnews {
+  width: 830px;
+}
+
+#latestnews {
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 26px;
+  margin-bottom: 40px;
+  float: left;
+}
+
+#viewall {
+  float: right;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.gridthing {
+  width: 320px;
+  height: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+#fiveg {
+  width: 320px;
+  border-radius: 5px;
+}
+
+#supercharge {
+  background-color: #D1D9E4;
+}
+
+#posttext {
+  width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#title {
+  font-weight: bold;
+}
+
+#news {
+  font-size: 12px;
+  color: #6e737a;
+}
+
+#lastcontainer {
+  width: 830px;
+  height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-top: 80px;
+}
+
+#anothergrid {
+  width: 830px;
+  height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+#whocontainer {
+  display: inline-grid;
+  grid-template-columns: 415px 415px;
+}
+
+#thewho {
+  margin-top: 50px;
+  width: 400px;
+  height: auto;
+  border-radius: 5px;
+}
+.who {
+  width: 320px;
+  height: 390px;
+  border-radius: 5px;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+#boddy {
+  font-size: 15px;
+}
+
+#learn {
+  float: right;
+  color: #FB6848;
+}
+
+#header {
+  margin-bottom: 20px;
+}
+#headerr {
+  font-size: 28px;
+}
+
+#nextwho {
+  width: 830px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+#nexxtwho {
+  font-size: 15px;
+}
+
+#smallernews {
+  margin-top: -10px;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+.smallnews {
+  font-size: 12px;
+  color: #6e737a;
+}
+
+.smallcontent {
+  font-size: 14px;
+}
+
+#bottom {
+  display: inline-grid;
+  grid-template-columns: 200px 200px 200px 200px 30px;
+  width: 830px;
+}
+
+.bottomgrids {
+  width: 115px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+
+.bottomheaders {
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.bottomcontent {
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 10px;
+}
+
+#columnoficons {
+  width: 20px;
+  height: 140px;
+  margin-top: 40px;
+}
+.icons {
+  width: 17px;
+  height: 17px;
+  margin-bottom: 15px;
+}
+
+#bottombar {
+  width: 100%;
+  background-color: #292927;
+  height: 30px;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+#bottomthings {
+  width:830px;
+  margin: auto;
+}
+#bottomthings a:link {
+  color: white;
+  text-decoration: none;
+}
+#bottomthings a:visited {
+  color: white;
+  text-decoration: none;
+}
+#bottomthings a:hover {
+  color: white;
+  text-decoration: underline;
+}
+#bottomthings a:active {
+  color: white;
+  text-decoration: none;
+}
+#bottomthings a {
+  font-size: 12px;
+}
+
+a#bottomleft {
+  float: left;
+  margin-top: 2px;
+}
+a#bottomright {
+  float: right;
+  margin-top: 2px;
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #gridcontainer2, #gridcontainer, #gridcontainer3, #newsection, #bottom{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+  #anothergrid, #whocontainer, #who, #nextwho {
+    width: 100%
+  }
+  #nextsection {
+    margin-top: 190px;
+  }
+}

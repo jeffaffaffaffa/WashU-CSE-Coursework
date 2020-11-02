@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="styleforfun.css" rel="stylesheet" type="text/css">
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <meta charset="UTF-8"> <!-- removes validation error -->
+    <meta name="description" content="an instagram clone">
+    <meta name="keywords" content="instagram,social media,facebook,networking">
+    <meta name="author" content="Jeff Che">
+    <title>Instagram</title>
+  </head>
+
+
+<body>
+
+<!-- page header bar -->
+<div id="navbar">
+  <div id="navstuff">
+    <a href="https://www.instagram.com"><img id="leftlogo" src="https://cdn2.iconfinder.com/data/icons/harmonicons-04/64/instagram-512.png" alt="leftlogo" title="leftlogo"></a>
+    <a href="https://www.instagram.com"><img id="mainlogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="logo" title="metric logo"></a>
+    <input id="search" type="text" placeholder="Search">
+    <img class="logo" src="https://static.thenounproject.com/png/782776-200.png" alt="logo2" title="explore logo">
+    <img class="logo" src="https://cdn2.iconfinder.com/data/icons/instagram-ui/48/jee-68-512.png" alt="logo3" title="notif logo"> <!-- should be a menu -->
+    <img class="logo" src="https://cdn2.iconfinder.com/data/icons/instagram-ui/48/jee-74-512.png" alt="logo3" title="me logo">
+  </div>
+</div>
+
+<!-- sidebar and posts as two columns within grid-container -->
+<div class="grid-container">
+  <div class="posts">
+    <div id="post1">
+      <div class="topofpoststuff">
+        <img class="profile" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GodfreyKneller-IsaacNewton-1689.jpg/220px-GodfreyKneller-IsaacNewton-1689.jpg" alt="profile" title="profile">
+        <p class=user_description id="topuser">metricsystemisgod</p>
+      </div>
+      <div class="everything">
+        <img id="post1img" src="https://images.pexels.com/photos/1870376/pexels-photo-1870376.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="cat" title="cat">
+        <div class="icons">
+          <img class="like" src="https://www.flaticon.com/premium-icon/icons/svg/1947/1947276.svg" alt="like" title="like">
+          <img class="comment" src="https://www.flaticon.com/premium-icon/icons/svg/1947/1947247.svg" alt="comment" title="comment">
+          <img class="share" src="https://www.flaticon.com/premium-icon/icons/svg/1947/1947267.svg" alt="share" title="share">
+          <img class="bookmark" src="https://www.flaticon.com/premium-icon/icons/svg/1947/1947270.svg" alt="bookmark" title="bookmark">
+        </div>
+        <div class="postcontent">
+          <p class="likes">11 likes</p>
+          <p class="user_description">metricsystemisgod <span class="descrip">my cat's name is Metric System. </span><span class="hashtags">#isaacnewtonislord</span></p>
+          <p class="timeposted">3 HOURS AGO</p>
+        </div>
+        <div class="commentsection">
+          <hr class="postline">
+          <input class="comment" type="text" placeholder="Add a comment...">
+          <img class="dots" src="https://cdn3.iconfinder.com/data/icons/iconano-random-stuff/512/126-More-512.png" alt="..." title="...">
+        </div>
+      </div>
+    </div>
+
+    <div id="post2">
+      <div class="topofpoststuff">
+        <img class="profile" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GodfreyKneller-IsaacNewton-1689.jpg/220px-GodfreyKneller-IsaacNewton-1689.jpg" alt="profile" title="profile">
+        <p class=user_description id="seconduser">kiloGRAM</p>
+      </div>
+      <div class="everything">
+        <img id="post2img" src="https://i1.wp.com/www.butterflyfields.com/wp-content/uploads/2019/06/Isaac-Newton-Contributions-in-Science.jpg?fit=590%2C350&ssl=1" alt="cat" title="cat">
+        <div class="icons">
+          <img class="like" src="https://www.flaticon.com/premium-icon/icons/svg/1947/1947276.svg" alt="like" title="like">
+          <img class="comment" src="https://www.flaticon.com/premium-icon/icons/svg/1947/1947247.svg" alt="comment" title="comment">
+          <img class="share" src="https://www.flaticon.com/premium-icon/icons/svg/1947/1947267.svg" alt="share" title="share">
+          <img class="bookmark" src="https://www.flaticon.com/premium-icon/icons/svg/1947/1947270.svg" alt="bookmark" title="bookmark">
+        </div>
+        <div class="postcontent">
+          <p class="likes">4 likes</p>
+          <p class="user_description">kiloGRAM <span class="descrip">Isaac Newton is the father of Newtonian Mechanics. </span><span class="hashtags">#isaacnewtonislord</span></p>
+          <p class="timeposted">5 HOURS AGO</p>
+        </div>
+        <div class="commentsection">
+          <hr class="postline">
+          <input class="comment" type="text" placeholder="Add a comment...">
+          <img class="dots" src="https://cdn3.iconfinder.com/data/icons/iconano-random-stuff/512/126-More-512.png" alt="..." title="...">
+        </div>
+      </div>
+    </div>
+
+    <div id="suggestions">
+      <p id="sugg">Suggestions For You</p>
+      <p id="seeall">See All</p>
+      <div class="suggested" id="firstone">
+        <img class="suggpics" src="https://cdn.mos.cms.futurecdn.net/c7dppKDbG3JXuMfybV5tUX-970-80.jpg" alt="einstein" title="einstein">
+        <img class="x" src="https://cdn0.iconfinder.com/data/icons/web/512/e52-512.png" alt="x" title="x">
+        <div class="nameandverify">
+          <p class="suggnames">e=mc^2</p>
+          <img class="verified" src="https://s3-us-west-2.amazonaws.com/jumpermedia.co/uploads/2018/07/instagram-verified-symbol-768x768-1-300x300.png" alt="verified" title="verified">
+          <p class="rando">Followed by BOHRing</p>
+        </div>
+        <img class="followbutton" src="https://chrisrickman.ca/wp-content/uploads/2018/05/follow-instagram-button.svg" alt="followbutton" title="followbutton">
+
+      </div>
+      <div class="suggested" id="secondone">
+        <img class="suggpics" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Niels_Bohr.jpg/800px-Niels_Bohr.jpg" alt="bohr" title="bohr">
+        <img class="x" src="https://cdn0.iconfinder.com/data/icons/web/512/e52-512.png" alt="x" title="x">
+        <div class="nameandverify">
+          <p class="suggnames">bohringpage</p>
+          <img class="verified" id="bohrid" src="https://s3-us-west-2.amazonaws.com/jumpermedia.co/uploads/2018/07/instagram-verified-symbol-768x768-1-300x300.png" alt="verified" title="verified">
+          <p class="rando">Popular</p>
+        </div>
+        <img class="followbutton" src="https://chrisrickman.ca/wp-content/uploads/2018/05/follow-instagram-button.svg" alt="followbutton" title="followbutton">
+      </div>
+      <div class="suggested" id="thirdone">
+        <img class="suggpics" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Richard_Feynman_Nobel.jpg/220px-Richard_Feynman_Nobel.jpg" alt="feynman" title="feynman">
+        <img class="x" src="https://cdn0.iconfinder.com/data/icons/web/512/e52-512.png" alt="x" title="x">
+        <div class="nameandverify">
+          <p class="suggnames">r.feynman</p>
+          <img class="verified" id="feynid" src="https://s3-us-west-2.amazonaws.com/jumpermedia.co/uploads/2018/07/instagram-verified-symbol-768x768-1-300x300.png" alt="verified" title="verified">
+          <p class="rando">Followed by God</p>
+        </div>
+          <img class="followbutton" src="https://chrisrickman.ca/wp-content/uploads/2018/05/follow-instagram-button.svg" alt="followbutton" title="followbutton">
+      </div>
+      <img id="suggestionsarrow" src="https://cdn2.iconfinder.com/data/icons/gender-identity/2480/gender-25-128.png" alt="arrow" title="arrow">
+    </div>
+
+  </div>
+
+<!--the other side of page -->
+<div class="rightside">
+  <div class="sidebar">
+    <div id="personalstory">
+      <img id="mystorypic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Max_Planck_1933.jpg/220px-Max_Planck_1933.jpg" alt="personalstory" title="personalstory">
+      <p id="myusername">iAMmaxPLANCK</p>
+      <p id="myname">Max Planck</p>
+      <hr class="sidebarlines" id="firstline">
+    </div>
+    <div id="topofstories">
+      <p id="stories">Stories</p>
+      <p id="watchall">Watch All</p>
+    </div>
+    <div id="allstories">
+      <div id="firststory">
+        <img class="storypics" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/220px-Alan_Turing_Aged_16.jpg" alt="turing" title="turing">
+        <p class="storyusernames">turingmachine</p>
+        <p class="storytimes">6 HOURS AGO</p>
+      </div>
+      <div id="secondstory">
+        <img class="storypics" src="https://www.catholicnewsagency.com/images/Pope_Francis_at_the_general_audience_Sept_25_2019_Credit_Daniel_Ibanez_CNA.jpg?w=760" alt="catholicism" title="catholicism">
+        <p class="storyusernames">theromancatholicchurch</p>
+        <p class="storytimes">4 HOURS AGO</p>
+      </div>
+      <div id="thirdstory">
+        <img class="storypics" src="https://i.cbc.ca/1.2976942.1425097153!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/martin-luther.jpg" alt="luther" title="luther">
+        <p class="storyusernames">the.mluther</p>
+        <p class="storytimes">4 HOURS AGO</p>
+      </div>
+      <div id="fourthstory">
+        <img class="storypics" src="https://upload.wikimedia.org/wikipedia/commons/b/b3/ETH-BIB-Bernoulli%2C_Daniel_%281700-1782%29-Portrait-Portr_10971.tif_%28cropped%29.jpg" alt="bernoulli" title="bernoulli">
+        <p class="storyusernames">real.bernoulli</p>
+        <p class="storytimes">3 HOURS AGO</p>
+      </div>
+      <div id="fifthstory">
+        <img class="storypics" src="https://upload.wikimedia.org/wikipedia/commons/b/b3/ETH-BIB-Bernoulli%2C_Daniel_%281700-1782%29-Portrait-Portr_10971.tif_%28cropped%29.jpg" alt="bernoulli" title="bernoulli">
+        <p class="storyusernames">bernoulli.fans</p>
+        <p class="storytimes">3 HOURS AGO</p>
+      </div>
+      <div id="sixthstory">
+        <img class="storypics" src="https://upload.wikimedia.org/wikipedia/commons/b/b3/ETH-BIB-Bernoulli%2C_Daniel_%281700-1782%29-Portrait-Portr_10971.tif_%28cropped%29.jpg" alt="bernoulli" title="bernoulli">
+        <p class="storyusernames">bernoulli_newsupdates</p>
+        <p class="storytimes">1 HOURS AGO</p>
+      </div>
+    </div>
+  </div>
+  <div class="stuffunderstories">
+    <hr class="sidebarlines">
+    <p class="randomtext"><a class="links" href="">About Us</a> - <a class="links" href="">Support</a> - <a class="links" href="">Press</a> - <a class="links" href="">API</a> - <a class="links" href="">Jobs</a> -</p>
+    <p class="randomtext"><a class="links" href="">Privacy</a> - <a class="links" href="">Terms</a> - <a class="links" href="">Directory</a> - <a class="links" href="">Profiles</a> -</p>
+    <p class="randomtext"><a class="links" href="">Hashtags</a> - <a class="links" href="">Language</a></p>
+    <p class="randomtext" id="copyright">@ 2019 <a class="links" href="https://www.instagram.com">INSTAGRAM</a></p>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

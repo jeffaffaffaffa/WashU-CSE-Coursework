@@ -1,0 +1,182 @@
+body {
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+#mission {
+  position: relative;
+  text-align: center;
+  width: 80%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#mission_back {
+  width: 100%;
+  border-radius:10px;
+  padding-bottom: 20px;
+}
+
+
+
+/* .column {
+  float: left;
+  width: 48%;
+  margin:10px;
+} */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#daphne, #jeff {
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+
+.bios {
+  padding-top: 30px;
+  text-align: center;
+}
+#daphne:hover{
+   transform: scale(1.1);
+}
+
+#jeff:hover{
+     transform: scale(1.1);
+}
+.name{
+  font-weight:bold;
+  font-size: 30px;
+}
+.bio{
+  padding: 10px;
+  text-align:left;
+}
+#founders{
+  font-weight:bold;
+  font-size:50px;
+  text-align:center;
+}
+#explain{
+  margin-left:60px;
+  margin-right:60px;
+  text-align:center;
+}
+@media only screen and (max-device-width:600px){
+  #centered{
+    font-size:17px;
+    margin-top:7px;
+    font-family: cursive;
+  }
+}
+.daphnehalf,.jeffhalf{
+  background-color:#FF9F9F;
+  float: left;
+  width: 80%;
+  margin:10px;
+  padding:20px;
+  width:auto;
+  height:auto;
+
+}
+  #year{
+  font-size:20px;
+}
+.subscribe, #subscribe{
+  text-align:center;
+  margin: 10px;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-weight:bold;
+
+}
+.mainiconsubscribe{
+  text-align:center;
+  /* background-color: #f5f5f5; */
+  padding: 10px;
+  height: 100px;
+  width:100%;
+}
+.subscribing{
+  display: inline-block;
+}
+input[type=submit] {
+    border-radius: 5px;
+    border: 0;
+    width: 80px;
+    height:23px;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    font-weight:bold;
+    background:#2B3856;
+    color:white;
+    cursor: pointer;
+}
+#nameactual, #emailactual{
+  height: 23px;
+  width: 300px;
+  border-radius:5%;
+}
+#commentbox{
+  width:700px;
+  height: 200px;
+  margin-bottom:100px;
+}
+.biography{
+  top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns:50% 50%;
+  grid-gap: 5px;
+}
+.mainicon7{
+  position:relative;
+  top:10px;
+}
+.mainiconsubscribe{
+  background-color:#FAF7F7;
+  height: 300px;
+}
+body{
+  margin-top:73px;
+}
+
+.kanyestuff {
+  text-align: center;
+}
+
+#generateQuote {
+  background-color: #2B3856; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#quote {
+  color: red;
+}
+
+#lordKayne {
+  width: 100%;
+}
+
+#kanyewest {
+  width: 33%;
+  display: block;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}

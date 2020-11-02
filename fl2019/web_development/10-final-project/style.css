@@ -1,0 +1,225 @@
+.headerbar{
+  top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns:20% 20% 20% 20% 20%;
+  grid-gap: 5px;
+  background-color:#FAF7F7;
+  position:fixed;
+  z-index:1;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 7px;
+  margin: 0 auto;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  color:gray;
+  text-align:center;
+  font-size:16px;
+  margin-right:0px;
+  margin-left:0px;
+}
+
+#whole {
+  width: 100%;
+}
+
+#mainlogo{
+  width:100%;
+  height:100%;
+  margin-top:10px;
+}
+
+.item_text {
+  height:30px;
+  position: relative;
+  top: 22px;
+  color:#616060;
+}
+
+/* unvisited link */
+a:link {
+  color: #616060;
+}
+
+/* visited link */
+a:visited {
+  color: #616060;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ff4538;
+}
+
+/* selected link */
+a:active {
+  color: #ff4538;
+}
+
+#searchbar {
+  position: relative;
+  top: 18px;
+}
+#mainlogo{
+  float:left;
+}
+
+#chow{
+float:right;
+font-size: 30px;
+margin-top:7px;
+font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+
+#dumpling{
+width: 100%;
+height: 75%;
+}
+
+.mainicon7{
+    top: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns:23% 23% 23% 23%;
+    grid-gap: 10px;
+    font-size: 13px;
+    color:darkgray;
+    text-align:left;
+    margin-left: 4%;
+}
+
+#linklist1, #linklist2, #linklist3, #linklist4{
+  list-style-type: none;
+  color:darkgray;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+.icon3, .icon4, .icon5, .mainicon6{
+    top:0;
+    width: 100%;
+    display:grid;
+    grid-template-columns:48% 48%;
+    grid-gap:15px;
+    text-align:center;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    margin: 15px;
+    height: 550px;
+}
+
+.careerimage, .newsimage, .spaceimage {
+  text-align:center;
+}
+.spacephoto,#career {
+  padding-top: 20px;
+  width: 80%;
+  height:80%;
+  border-radius:5%;
+
+}
+#helicopterphoto {
+  padding-top: 20px;
+  width: 80%;
+  height:80%;
+  border-radius:5%;
+}
+
+.leftfourth, .rightfirst{
+  background-color:#f5f5f5;
+  padding-top:40px;
+  padding-left:40px;
+  padding-right:40px;
+  color:black;
+}
+.rightfourth, .leftfirst{
+  background-color:#414a4c;
+  padding-top:40px;
+  padding-left:40px;
+  padding-right:40px;
+  color:white;
+}
+
+.spacetitle{
+  font-weight:bold;
+  font-size:30px;
+}
+.learnmore,.graph{
+  margin-top:10px;
+}
+
+.mapouter{
+position:relative;
+text-align:center;
+height:373px;
+width:100%;
+}
+
+.gmap_canvas{
+  overflow:hidden;
+  background:none!important;
+  height:373px;
+  width:100%;
+}
+
+iframe {
+  width: 100%;
+  height: 373px;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.mySlides {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#button2 {
+  float: right;
+}
+.button {
+  position: relative;
+  background-color: #f2e9e9;
+  border: none;
+  color: gray;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+body{
+  margin-top:73px;
+}
+.bottomleft{
+  position:absolute;
+  bottom:10%;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-weight:bold;
+  font-size: 25px;
+  color:gray;
+  padding-top:10px;
+  padding-bottom:10px;
+  width:100%;
+  background-color:#f2e9e9;
+  border-radius: 10px;
+  text-align:center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-device-width:600px){
+  #chow{
+    font-size:17px;
+    margin-top:7px;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  }
+}

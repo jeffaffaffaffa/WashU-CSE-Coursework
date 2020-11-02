@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="script.js" type="text/javascript"></script>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="a gallery of car images implementing some js">
+    <meta name="keywords" content="images,gallery,cars,european">
+    <meta name="author" content="Jeff Che">
+    <title>Some European Cars</title>
+  </head>
+
+  <body>
+    <h2 id="title">European Cars</h2>
+
+<!-- all 12 images displayed in a 3 column 4 row layout on main page -->
+<!-- each image, when clicked, opens gallery and displays that image; calls to js functions -->
+
+    <div class="rowpics">
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_1213112_717.jpg" class="pics" alt="jag" onclick="openGallery();currentPic(1)">
+      </div>
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131112_717.jpg" class="pics" alt="ferrari" onclick="openGallery();currentPic(2)">
+      </div>
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131125_717.jpg" class="pics" alt="porsche" onclick="openGallery();currentPic(3)">
+      </div>
+    </div>
+
+    <div class="rowpics">
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131132_717.jpg" class="pics" alt="benz" onclick="openGallery();currentPic(4)">
+      </div>
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131141_717.jpg" class="pics" alt="bmw" onclick="openGallery();currentPic(5)">
+      </div>
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131144_717.jpg" class="pics" alt="911" onclick="openGallery();currentPic(6)">
+      </div>
+    </div>
+
+    <div class="rowpics">
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131151_717.jpg" class="pics" alt="5series" onclick="openGallery();currentPic(7)">
+      </div>
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131164_717.jpg" class="pics" alt="jaguar" onclick="openGallery();currentPic(8)">
+      </div>
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131171_717.jpg" class="pics" alt="aston" onclick="openGallery();currentPic(9)">
+      </div>
+    </div>
+
+    <div class="rowpics">
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131176_717.jpg" class="pics" alt="cars" onclick="openGallery();currentPic(10)">
+      </div>
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_121311109_717.jpg" class="pics" alt="lambo" onclick="openGallery();currentPic(11)">
+      </div>
+      <div class="columnpics">
+        <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131196_717.jpg" class="pics" alt="mclaren" onclick="openGallery();currentPic(12)">
+      </div>
+    </div>
+
+    <!-- slideshow gallery -->
+    <div id="gallery">
+      <!-- exit out button, closes gallery on click -->
+      <span class="xout" onclick="closeGallery()">&times;</span>
+      <div id="gallerypics">
+
+        <div class="slide">
+          <div class="slidenumber">1 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_1213112_717.jpg" class="picsinslide" alt="1">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">2 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131112_717.jpg" class="picsinslide" alt="2">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">3 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131125_717.jpg" class="picsinslide" alt="3">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">4 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131132_717.jpg" class="picsinslide" alt="4">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">5 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131141_717.jpg" class="picsinslide" alt="5">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">6 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131144_717.jpg" class="picsinslide" alt="6">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">7 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131151_717.jpg" class="picsinslide" alt="7">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">8 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131164_717.jpg" class="picsinslide" alt="8">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">9 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131171_717.jpg" class="picsinslide" alt="9">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">10 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131176_717.jpg" class="picsinslide" alt="10">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">11 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_121311109_717.jpg" class="picsinslide" alt="11">
+        </div>
+
+        <div class="slide">
+          <div class="slidenumber">12 / 12</div>
+          <img src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131196_717.jpg" class="picsinslide" alt="12">
+        </div>
+
+        <!-- next/previous buttons, change slide on click, inputs 1 or -1 into changeSlide function -->
+        <a id="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a id="next" onclick="changeSlide(1)">&#10095;</a>
+        <!-- caption for each pic -->
+        <div id="captiondiv">
+          <!-- is empty for now, caption is the alt of each image (the 12 images directly below) and changes with image to image -->
+          <p id="caption"></p>
+        </div>
+
+        <!-- thumbnail images, on click changes the slideshow to show that image; currentPic -->
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_1213112_717.jpg" onclick="currentPic(1)" alt="Jaguar">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131112_717.jpg" onclick="currentPic(2)" alt="Ferrari">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131125_717.jpg" onclick="currentPic(3)" alt="Porsche">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131132_717.jpg" onclick="currentPic(4)" alt="German Cars">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131141_717.jpg" onclick="currentPic(5)" alt="BMW 1 Series">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131144_717.jpg" onclick="currentPic(6)" alt="More Porsche">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131151_717.jpg" onclick="currentPic(7)" alt="BMW 5 Series">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131164_717.jpg" onclick="currentPic(8)" alt="Another Jag">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131171_717.jpg" onclick="currentPic(9)" alt="Aston Martin">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131176_717.jpg" onclick="currentPic(10)" alt="Some nice cars">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_121311109_717.jpg" onclick="currentPic(11)" alt="Lambo">
+        </div>
+
+        <div class="columnpicss">
+          <img class="thumbnails" src="https://media.ed.edmunds-media.com/non-make/ot/ot_12131196_717.jpg" onclick="currentPic(12)" alt="Lotus">
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+  </html>

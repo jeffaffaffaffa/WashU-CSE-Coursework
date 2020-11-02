@@ -1,0 +1,25 @@
+{
+  "name": "module6-group-module6-464957-466581",
+  "version": "1.0.0",
+  "description": "Module 6 group: multi-room chat server.",
+  "main": "chat-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon chat-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse330-spring-2020/module6-group-module6-464957-466581.git"
+  },
+  "author": "Edward Chandler and Jeff Che",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cse330-spring-2020/module6-group-module6-464957-466581/issues"
+  },
+  "homepage": "https://github.com/cse330-spring-2020/module6-group-module6-464957-466581#readme",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2",
+    "socket.io": "^2.3.0"
+  }
+}

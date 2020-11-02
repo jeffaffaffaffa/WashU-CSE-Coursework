@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="calculator">
+    <form id="myForm">
+        <h3>JS Calculator</h3>
+        <p>Answer field changes automatically after entering new values and/or selecting a new operation.</p>
+        <p>
+            <label for="firstinput">First number:</label>
+            <input type="text" name="firstnumber" id="firstinput"/>
+        </p>
+        <p>
+            <label for="add">Add + </label>
+            <input type="radio" name="operation" value="addd" id="add"/><label for="add"></label>
+            <label for="sub">Subtract - </label>
+            <input type="radio" name="operation" value="subb" id="sub"/><label for="sub"></label>
+            <label for="mult">Multiply * </label>
+            <input type="radio" name="operation" value="multt" id="mult"/><label for="mult"></label>
+            <label for="div">Divide / </label>
+            <input type="radio" name="operation" value="divv" id="div"/><label for="div"></label>
+        </p>
+        <p>
+            <label for="secondinput">Second number:</label>
+            <input type="text" name="secondnumber" id="secondinput"/>
+        </p>
+    </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("firstinput").addEventListener("change",() => {    
+            first();
+            calculation();    
+        })
+    
+        document.getElementById("secondinput").addEventListener("change",() => {    
+            second();
+            calculation();    
+        })
+    
+        document.getElementById("add").addEventListener("change",() => {    
+            isAdd();
+            calculation();    
+        })
+    
+        document.getElementById("sub").addEventListener("change",() => {    
+            isSub();
+            calculation();    
+        })
+    
+        document.getElementById("mult").addEventListener("change",() => {    
+            isMult();
+            calculation();    
+        })
+    
+        document.getElementById("div").addEventListener("change",() => {    
+            isDiv();
+            calculation();    
+        })
+    
+        //document.getElementById("add").addEventListener("change", isAdd);
+        // document.getElementById("sub").addEventListener("change", isSub);
+        // document.getElementById("mult").addEventListener("change", isMult);
+        // document.getElementById("div").addEventListener("change", isDiv);
+    
+        let op;
+        let ans;
+        let x;
+        let y;
+    
+        function first(){
+            x = document.getElementById("firstinput").value;
+        }
+        function second(){
+            y = document.getElementById("secondinput").value;
+        }
+        function isAdd(){
+            op = "add";
+        }
+        function isSub(){
+            op = "sub";
+        }
+        function isMult(){
+            op = "mult";
+        }   
+        function isDiv(){
+            op = "div";
+        }
+    
+        function calculation(){
+            if (op == "add"){
+                ans = parseFloat(x) + parseFloat(y);
+            } else if (op == "sub"){
+                ans = parseFloat(x) - parseFloat(y);
+            } else if (op == "mult"){
+                ans = parseFloat(x)*parseFloat(y);
+            } else if (op == "div"){
+                if (parseFloat(y) == 0) {
+                    ans = "Divide by zero error!";
+                } else {
+                    ans = parseFloat(x)/parseFloat(y); 
+                }
+            }
+            document.getElementById("result").innerHTML = "= " + ans;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "module6-individual-jeffaffaffaffa",
+  "version": "1.0.0",
+  "description": "464957",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon hello.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse330-spring-2020/module6-individual-jeffaffaffaffa.git"
+  },
+  "author": "jche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cse330-spring-2020/module6-individual-jeffaffaffaffa/issues"
+  },
+  "homepage": "https://github.com/cse330-spring-2020/module6-individual-jeffaffaffaffa#readme",
+  "dependencies": {
+    "mime": "~1.6.0",
+    "nodemon": "^2.0.2",
+    "socket.io": "~0.9.16",
+    "url": "^0.11.0"
+  }
+}

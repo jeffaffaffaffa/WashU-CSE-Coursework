@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Widget</title>
+    <link rel="stylesheet" type="text/css" href="weather.css">
+</head>
+
+<body>
+    <div class="weather" id="weatherWidget">
+        <div class="weather-loc"></div>
+        <div class="weather-humidity"></div>
+        <div class="weather-temp"></div>
+        <img src="placeholder.com" alt="weather tomorrow" class="weather-tomorrow" />
+        <img src="placeholder.com" alt="weather day after tomorrow" class="weather-dayaftertomorrow" /> <!-- using placeholder.com to remove validation error; lack of src tag -->
+    </div>
+    <div id="button">
+        <button id="btn">Update Weather</button>
+    </div>
+
+    <script>
+        const pathToPhpFile = 'https://classes.engineering.wustl.edu/cse330/content/weather_json.php';
+
+//using xmlhttprequest
+        // function fetchWeather() {
+        //     let xmlhttp = new XMLHttpRequest();
+        //     xmlhttp.onreadystatechange = function() {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             console.log(this.responseText);
+                    // let weatherInfo = JSON.parse(this.responseText);
+                    // let location = weatherInfo.location;
+                    // let humidity = weatherInfo.atmosphere.humidity;
+                    // let currentTemp = weatherInfo.current.temp;
+                    // let tomorrow = weatherInfo.tomorrow.code;
+                    // let dayAfter = weatherInfo.dayafter.code;
+                    // let widget = document.getElementById('weatherWidget').children;
+                    // widget[0].innerHTML = '<p><strong>' + location.city + ', </strong>' + location.state + '</p>';
+                    // widget[1].innerHTML = humidity;
+                    // widget[2].innerHTML = currentTemp;
+                    // widget[3].src = 'http://us.yimg.com/i/us/nws/weather/gr/' + tomorrow + 'ds.png';
+                    // widget[4].src = 'http://us.yimg.com/i/us/nws/weather/gr/' + dayAfter + 'ds.png';
+
+        //         }
+        //     };
+        //     xmlhttp.open("GET", pathToPhpFile, true);
+        //     xmlhttp.send();
+        // }
+
+//using fetch api
+        function fetchWeather() {
+
+            fetch(pathToPhpFile)
+            .then(res => res.json())    //returned thing is response, what goes into next then
+            .then( 
+                function (response) {
+                    let info = JSON.stringify(response);
+                    let weatherInfo = JSON.parse(info);
+                    let location = weatherInfo.location;
+                    let humidity = weatherInfo.atmosphere.humidity;
+                    let currentTemp = weatherInfo.current.temp;
+                    let tomorrow = weatherInfo.tomorrow.code;
+                    let dayAfter = weatherInfo.dayafter.code;
+                    let widget = document.getElementById('weatherWidget').children;
+                    widget[0].innerHTML = '<p><strong>' + location.city + ', </strong>' + location.state + '</p>';
+                    widget[1].innerHTML = humidity;
+                    widget[2].innerHTML = currentTemp;
+                    widget[3].src = 'http://us.yimg.com/i/us/nws/weather/gr/' + tomorrow + 'ds.png';
+                    widget[4].src = 'http://us.yimg.com/i/us/nws/weather/gr/' + dayAfter + 'ds.png';
+                })
+            .catch(error => console.error('Error:', error));
+
+        }
+        document.addEventListener("DOMContentLoaded", fetchWeather, false);
+        document.getElementById("btn").addEventListener("click", fetchWeather, false);
+
+    </script>
+</body>
+</html>

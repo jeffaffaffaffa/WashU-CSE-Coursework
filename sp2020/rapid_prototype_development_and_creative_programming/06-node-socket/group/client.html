@@ -1,0 +1,443 @@
+<!-- help for making loading bar: https://www.w3schools.com/howto/howto_js_progressbar.asp -->
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Chatroom</title>
+      <link rel="stylesheet" type="text/css" href="client.css">
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script type ="text/javascript">
+         console.log("start")
+         let socketio = io.connect();
+         socketio.on("update_chatroom",function(data) {
+            console.log("data", data);
+            //Append an HR thematic break and the escaped HTML of the new message
+            document.getElementById("chatlog").appendChild(document.createElement("hr"));
+            document.getElementById("chatlog").appendChild(document.createTextNode(data['user'] + " | " + data['message']));
+         });
+
+         //ask for a nickname when connected to chatroom
+         socketio.on("connect", function(data) {
+            // console.log('connect', data)
+            usernamePrompt();
+         });
+
+         function usernamePrompt(message) {
+            if (message == undefined) message = ''
+            socketio.emit("add_nickname", prompt(`${message}What is your name for us to use in the chat room?`));
+         }
+
+         //show all users in the room
+         socketio.on("who", function(users) {
+            console.log('users.length', users.length);
+            $("#users_list").empty();
+            for(let i = 0; i < users.length; i++) {
+               console.log("hi", i);
+               document.getElementById("users_list").append(users[i].username + ", "); //TODO: display in a nicer format
+            }
+            console.log('users.length', users.length);
+
+            // document.getElementById("users_list").innerHTML = users; //TODO: display in a nicer format
+         });
+
+         socketio.on("banned_alert", function() {
+            alert("You have been banned from the chat!!");
+         });
+
+         socketio.on("kicked_alert", function() {
+            alert("You have been kicked!!");
+         });
+
+         socketio.on("failed_join", function() {
+            console.log("failed to join room");
+            alert("The chatroom you tried to enter doesn't exist!");
+         });
+
+         socketio.on("failed_join_wrong_pass", function() {
+            console.log("failed to join room; wrong password");
+            alert("Wrong password!");
+         });
+
+         socketio.on("failed_username", function(type) {
+            console.log("failed username")
+            if (type == "empty") {
+               usernamePrompt("Error: You must enter a nonempty username!\n")
+            } else {
+               usernamePrompt("Error: Username already taken. Please try another.\n")
+            }
+         });
+
+         socketio.on("failed_create", function() {
+            alert("Chatroom not created. Chatroom name must not already exist and must contain characters.");
+         });
+
+         socketio.on("cant_kick_or_ban", function(type) {
+            if (type == 'kickBanAdminAttempt') {
+               alert("The admin cannot be deleted or kicked.");
+            } else {
+               alert("Only the admin of the chatroom has kick or ban priviledges.");
+            }
+         });
+         
+
+         //to change room for user after clicking button
+         function changeRoom(room) {
+            console.log("changeRoom:", room);
+            socketio.emit("join_chatroom", room);
+         }
+
+         //updates the room user is currently in.
+         //current room name is bolded and other rooms' names are links to those rooms
+         socketio.on("updateRooms", function(all_rooms, your_room, isAdmin) {
+            updateRoomList(all_rooms, your_room, isAdmin);
+         });
+
+         //when new room is added, refresh list of rooms with current room bolded and others as links
+         // socketio.on("addRoom", function(all_rooms, your_room) {
+         socketio.on("addRoom", function(all_rooms, your_room) {      
+            updateRoomList(all_rooms, your_room);
+         });
+
+         /**
+          * Updates the list of available rooms.
+          * @param {string[], string} all_rooms, your_room 
+          */
+         function updateRoomList(all_rooms, your_room, isAdmin) {
+            $("#rooms").empty();
+            // console.log(all_rooms, " : ", your_room)
+            if (isAdmin == false) {
+               $("#host_info").hide();
+            } else {
+               $("#host_info").show();
+            }
+            // Display all the available rooms
+            let all_room_keys = Object.keys(all_rooms);
+            for(let i = 0; i < all_room_keys.length; i++) {
+               console.log(all_rooms[all_room_keys[i]]);
+               if(all_room_keys[i] == your_room) {
+                  $("#rooms").append("<span class='room-list'><b>" + all_room_keys[i] + "</b></span>");
+               } else {
+                  $('#rooms').append('<span class="room-list"><a href="#" onclick="changeRoom(\''+ all_room_keys[i]+'\')">' + all_room_keys[i] + '</a></span>');
+               }
+            }
+            $("#chatlog").empty();
+            let chatroomNameHeader = document.createElement("h3");
+            chatroomNameHeader.appendChild(document.createTextNode(your_room));
+            // document.getElementById("chatlog").prepend(chatroomNameHeader);
+            $("#chatroom-name").empty()
+            document.getElementById("chatroom-name").append(chatroomNameHeader)
+         }
+
+         //gets person's name and sends to backend to kick; needs kick_person function to handle this
+         function kick_person() {
+            let person = document.getElementById("kb_info").value;
+
+            if (person != null && person != '') {
+               socketio.emit("kick_person", person);
+               $("#kb_info").val("");
+            } else {
+               alert("Must be nonempty")
+            }
+            
+         }
+
+         //gets person's name and sends to backend to ban; needs ban_person function to handle this
+         function ban_person() {
+            let person = document.getElementById("kb_info").value;
+
+            if (person != null && person != '') {
+               socketio.emit("ban_person", person);
+               $("#kb_info").val("");
+            } else {
+               alert("Must be nonempty")
+            }
+         }
+
+         //gets private message and sends to backend; needs sendPrivateMsg function to handle this
+         function sendPrivateMsg() {
+
+            let serverMessage = {};
+            let message = document.getElementById("priv-message").value;
+            let recipient = document.getElementById("recipient").value;
+
+            if (recipient != null && recipient != "" && message != null && message != "") {
+               loadingAnimation();
+               serverMessage["message"] = message;
+               serverMessage["recipient"] = recipient;
+
+               socketio.emit("sendPrivateMsg", serverMessage);
+
+               $("#priv-message").val("");
+               $("#recipient").val("");
+            } else {
+               alert("Must enter nonempty name and message!");
+            }j
+         }
+         //send message. gets the value of message and emits to backend
+         function sendMessage(){
+
+            let serverMessage = {};
+            let msg = document.getElementById("message_input").value;
+
+            if (msg != null && msg != "") {
+               loadingAnimation();
+               document.getElementById("message_input").value = "";
+               serverMessage["message"] = msg;
+
+               console.log("sendmessage")
+               socketio.emit("message_to_server", serverMessage);
+               $("#message_input").val("");
+            } else {
+               alert("invalid inputs");
+            }
+         }
+
+         function sendRandomDm() {
+
+            let serverMessage = {};
+            let message = document.getElementById("random-priv-message").value;
+
+            if (message != null && message != "") {
+               loadingAnimation();
+               serverMessage["message"] = message;
+               socketio.emit("sendRandomDm", serverMessage);
+               $("#random-priv-message").val("");
+            } else {
+               alert("invalid inputs");
+            }
+         }
+
+         //handles hello call from backend for PRIVATE messages
+         socketio.on("hello", function(data){
+            //private messages are in italics
+            if (data["recipient"] != null && data['recipient'] != '') {
+               document.getElementById("chatlog").appendChild(document.createElement("hr"));
+               document.getElementById("chatlog").appendChild(document.createTextNode("~ Private message from " + data["sender"] + " to " + data["recipient"] + ": " + data["message"] + " ~"));
+            } else {
+               alert("User is not in the room");
+            }
+         });
+
+         socketio.on("hello_random", function(data) {
+            if (data.status == "failure") {
+               alert(data["message"]);
+            } else {
+               if (data["recipient"] != null && data['recipient'] != '') {
+                  document.getElementById("chatlog").appendChild(document.createElement("hr"));
+                  if (data.role == "receiver") {
+                     document.getElementById("chatlog").appendChild(document.createTextNode("~ Your random pen-pal " + data["sender"] + " sent: " + data["message"] + " ~"));
+                  } else {
+                     document.getElementById("chatlog").appendChild(document.createTextNode("~ Your random pen-pal " + data["recipient"] + " received: " + data["message"] + " ~"));
+                  }
+               } else {
+                  alert("Error");
+               }
+            }
+         });
+
+         function createChatroom() {
+            // let msg = {
+            //    'chatRoomName': document.getElementById("create-chatroom").value,
+            //    'admin': 'ed' // FIXME: change to the actual creator of the chatroom!!!!!!!
+            // }
+            let msg = document.getElementById("create-chatroom").value;
+            socketio.emit("create_chatroom", msg)
+            document.getElementById("create-chatroom").value = "";
+            $("#kick_ban").empty();
+            $("#kick_ban").append('<input type="text" id="kb_info"/>');
+            $("#kick_ban").append('<button onclick="kick_person()">kick person</button>');
+            $("#kick_ban").append('<button onclick="ban_person()">ban person</button>');
+            $("#create-chatroom").val("");
+         }
+
+         //same as createChatRoom but requires password to set up
+         function createPrivateChatroom() {
+            let room = document.getElementById("create-chatroom").value;
+            socketio.emit("create-private-room", room, prompt("Set a password for your room (Note not entering a password will make the chatroom public)!"));
+            $("#kick_ban").empty();
+            $("#kick_ban").append('<input type="text" id="kb_info"/>');
+            $("#kick_ban").append('<button onclick="kick_person()">kick person</button>');
+            $("#kick_ban").append('<button onclick="ban_person()">ban person</button>');
+            $("#create-chatroom").val("");
+         }
+
+         socketio.on("password-check", function(room) {
+            // let correct_pass = data["password"];
+            socketio.emit("join-with-password", room, prompt("Room password:"));
+         });
+
+         function joinChatroom() {
+            var msg = document.getElementById("join-chatroom").value;
+            socketio.emit("join_chatroom", msg);
+            document.getElementById("join-chatroom").value = "";
+         }
+
+         $(function() {
+            // A slider that will change the size of the elements on the page.
+            $( "#font-slider" ).slider( {
+               value:0,
+               min: 0,
+               max: 10,
+               slide: function( event, ui ) {
+                  $( "body").css({
+                     fontSize: (1 + (ui.value)/10)+"em",
+                  })
+
+                  $( "input" ).css({
+                     width: 100 + ui.value*20+"px",
+                     height: 15 + ui.value*2+"px",
+                     fontSize: (.75 + (ui.value)/28)+"em"
+                  })
+                  
+                  $( "#messaging" ).css({
+                     height: 120+ ui.value * 8 + "px"
+                  })
+
+                  $( "#bottom-separation" ).css({
+                     height: 120+ ui.value * 8 + "px"
+                  })
+               }
+            });
+         });
+
+         // A loading animation fills a div when the action is called
+         function loadingAnimation() {
+            let i = 0;
+            if (i == 0) {
+               i = 1;
+               let bar = document.getElementById("loading_bar");
+               let width = 1;
+               let id = setInterval(frame, 5);
+               function frame() {
+                  if (width >= 100) {
+                     clearInterval(id);
+                     i = 0;
+                  } else {
+                     width++;
+                     bar.style.width = width + "%";
+                  }
+               }
+            }  
+         }
+      </script>
+
+      <style>
+            #loading_div {
+               width: 100%;
+               background-color: #ddd;
+            }
+
+            #loading_bar {
+               width: 1%;
+               height: 30px;
+               background-color: grey;
+            }
+            
+            html {
+               background-color: #b1fcfc;
+            }
+            .separate {
+               margin: 10px;
+               padding: 5px;
+               border: 1px solid gray;
+            }
+
+            span.room-list {
+               margin-right:10px;
+            }
+
+            .space {
+               margin-top: 5px;
+            }
+
+            #messaging {
+               box-sizing: border-box;
+               position: fixed;
+               height: 120px;
+               /* width: 98%; */
+               left: 8px;
+               right: 8px;
+               bottom: -2px;
+               background-color: #7ddddd;
+               z-index: 1000;
+            }
+
+            #bottom-separation {
+               height: 120px;
+            }
+         </style>
+   </head>
+   <body>
+      <h1>
+         Node.js Chatroom
+      </h1>
+      <div id="user-view">         
+         <div class="separate">
+            <h3>Available Chatrooms</h3>
+            <div id="rooms"></div>
+               <input type="text" id="create-chatroom" placeholder="chatroom"/>
+               <button onclick="createChatroom()">create chatroom</button>
+               <button onclick="createPrivateChatroom()">create chatroom with password</button> <br><br>
+         
+               <input type="text" id="join-chatroom" placeholder="chatroom"/>
+               <button onclick="joinChatroom()">join chatroom</button> <br> <br>
+        </div>      
+
+         <div id="menu-options" class="separate">
+            <span>Change Element Size:</span>
+            <div id="font-slider"></div>
+            <!-- <input type="text" id = "font-size" style = "border:0; font-weight:bold;"> -->
+         </div>
+         
+         <div id="host_info" class="separate" >
+            <p id="room_host_msg">Hosts can kick/ban people from rooms.</p>
+            <div id="kick_ban"></div>
+         </div>
+
+      </div>
+      
+      <div class="separate">
+         <h3 id="chatroom-name"></h3>
+         <span><strong>Users: </strong></span><span id="users_list"></span>
+         <h4>Chat Log</h4>
+         <div id="chatlog"></div>
+      </div>
+
+      <div id="bottom-separation"></div>
+
+      <div id="messaging" class="separate">
+         <div id="loading_div">
+            <div id="loading_bar"></div>
+         </div>   
+
+         <div class="space">
+            <span>Send a message to the chatroom (enter "/help" for help):</span>
+            <input type="text" id="message_input" placeholder="message"/>
+            <!-- <button id="send">send</button> -->
+            <button onclick="sendMessage()">send</button>
+         </div>
+         
+         <div class="space">
+            <span id="private">
+               <span>Send a private message </span>
+               <label>to: <input type="text" id="recipient" placeholder="their nickname"/></label>
+               <input type="text" id="priv-message" placeholder="message"/>
+               <button onclick="sendPrivateMsg()">Send</button>
+            </span>
+         </div>
+      
+         <div class="space">
+            <span>Want to meet someone new? Send a private message to a random user:</span>
+            <span id="random">
+               <input type="text" id="random-priv-message" placeholder="message"/>
+               <button onclick="sendRandomDm()">Send</button>
+            </span>
+         </div>
+         
+      </div>
+      
+
+   </body>
+</html>

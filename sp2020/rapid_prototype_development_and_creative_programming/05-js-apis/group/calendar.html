@@ -1,0 +1,132 @@
+<!-- Lines 48-63 are mostly from https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time#Using_time_inputs -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calendar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- FIXME: check this is all good -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="main-content">
+        <button id="view-event-list-btn" class="logged-in">Events</button> <br>
+        <button id="prev_month_btn">Previous Month</button>
+        <button id="next_month_btn">Next Month</button> <br>
+        <p class="logged-in">To Add Event, Double Click on Day</p>
+        <!-- <button id="add_event_btn">Add Event</button> -->
+        <table id="calendar">
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+            <tbody id="days">
+            </tbody>
+        </table>
+
+        <!-- login and register -->
+        <div id="login_user" class="logged-out">
+            <input type="text" name="username" placeholder="Username" id="user" autocomplete="off"/>
+            <input type="password" name="password" placeholder="Password" id="pass" autocomplete="off"/>
+            <input type="hidden" id="token" name="token"/>
+            <button id="login_btn">Login</button><br>
+        </div>
+        <div id="register_user" class="logged-out">
+            <input type="text" name="newuser" placeholder="New username" id="new_user" />
+            <input type="password" name="newpass1" placeholder="New password" id="new_pass1" />
+            <!-- <input type="password" name="newpass2" placeholder="Type password again" id="new_pass2" /> -->
+            <button id="register_btn">Register</button>
+
+        </div>
+        <div id="logout_user" class="logged-in">
+            <!-- <button id="logout_btn" style="visibility:hidden">Logout</button> -->
+            <button id="logout_btn">Logout</button>
+        </div>
+        <div id="themes" class="logged-in">
+            <label for="theme">Choose a theme:</label>
+            <select id="theme">
+                <option value="default">Default</option>
+                <option value="light_blue">Light Blue</option>
+                <option value="nude_orange">Nude Orange</option>
+                <option value="pasty_green">Pasty Green</option>
+                <option value="muted_red">Muted Red</option>
+                <option value="sad_yellow">Sad Yellow</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Sidebar of events -->
+    <div id="sidebar" class="logged-in">
+        <h3 id="event_title">Events:</h3>
+        <ul id="event-list">
+        </ul>
+    </div>
+
+    <!-- The dialog box to add events to a selected day -->
+    <div id="edit-day-events" title="Edit Day">
+        <label for="day-event-title">Event Title: </label>
+        <input id="day-event-title" type="text" name="dayEventTitle" placeholder="Event Title"> <br>
+        <label for="day-event-content">Event Content: </label> <br>
+        <textarea id="day-event-content" name="dayEventContent" placeholder="Event Content"></textarea>
+
+
+        <!-- Got solution from: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time#Using_time_inputs -->
+        <p class="select-event-time-fallback-label">Choose event time:</p>
+        <div class="select-event-time-fallback-selection">
+            <span>
+                <label for="new-event-hour">Hour:</label>
+                <select id="new-event-hour" class="hour" name="new-event-hour"></select>
+                <label for="new-event-minute">Minute:</label>
+                <select id="new-event-minute" class="minute" name="new-event-minute"></select>
+                <!-- <select id="timePeriod" name="timePeriod"></select> -->
+            </span>
+        </div>
+
+        <button id="add-event">Add Event</button>
+    </div>
+
+    <div id="edit-event" title="Edit Event">
+        <input id="event-date" type="hidden"/>
+        <input id="event-id" type="hidden" />
+        <h3 id="event-title" class="edit-event-display"></h3>
+        <p id="event-time" class="edit-event-display"></p>
+        <p id="event-content" class="edit-event-display"></p>
+
+        <!-- Edit, Delete, Share Event buttons -->
+        <button id="edit-event-btn" class="edit-event-display functionality-buttons">Edit</button>
+        <button id="delete-event-btn" class="edit-event-display functionality-buttons">Delete</button> <br>
+        <input id="share-with" class="edit-event-display functionality-buttons" type="text" name="shareWith" placeholder="Username"> <br>
+        <button id="share-event-btn" class="edit-event-display functionality-buttons">Share</button> <br>
+        
+        <input id="edit-event-title" class="edit-event-editer" type="text" /> <br>
+        <textarea id="edit-event-content" class="edit-event-editer"></textarea> <!--FIXME: do I need name???-->
+        <div class="select-event-time-fallback-selection edit-event-editer">
+            <span>
+                <label for="edit-event-hour">Hour:</label>
+                <select id="edit-event-hour" class="hour" name="edit-event-hour"></select>
+                <label for="edit-event-minute">Minute:</label>
+                <select id="edit-event-minute" class="minute" name="edit-event-minute"></select>
+            </span>
+        </div>
+        <button id="submit-event-changes" class="edit-event-editer">Submit Changes</button>
+
+    </div>
+
+    <script type="text/javascript" src="http://classes.engineering.wustl.edu/cse330/content/calendar.min.js"></script>
+    <script type="text/javascript" src="calendar-features.js"></script>
+
+    <!-- login, register, logout, change theme functionality -->
+    <script type="text/javascript" src="functions.js"></script>
+</body>
+</html>

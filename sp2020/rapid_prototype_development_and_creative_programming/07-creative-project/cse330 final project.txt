@@ -1,0 +1,31 @@
+Module 7 Rubric (Social Media Site) due Wednesday, April 22th
+
+
+1. Rubric turned in on time (5 points)
+* TA: Olivia Schotz signed off on April 12th
+
+
+2. Languages/Frameworks used (30 points)
+* Backend: Express (10 points)
+* Frontend: React (10 points)
+* Database: MongoDB (10 points)
+
+
+3. Functionality (40 Points):
+* Posts can be added, modified, and deleted (5 points)
+* Posts have a title, date, and time (5 points)
+* Users can log into the site, and they cannot view or change posts associated with other users (10 points)
+* Refreshing the page does not log a user out (5 points)
+* Users can send private messages and create group messages with other users (10 points)
+* Posts show number of “likes/dislikes” (5 points)
+
+
+4. Best Practices (5 points)
+* Code is readable and well formatted (3 points)
+* All pages pass the html validator (2 points)
+
+
+5. Creative (20 points)
+
+
+Total: 100 points

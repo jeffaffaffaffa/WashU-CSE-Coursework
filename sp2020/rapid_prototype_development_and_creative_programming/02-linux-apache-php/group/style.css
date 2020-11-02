@@ -1,0 +1,63 @@
+body {
+    background-color: #deb887;
+    color: #3d0000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+}
+
+button, input, a{
+    background-color: #ddcab1;
+    border-radius: 3px;
+}
+
+a {
+    text-decoration: none;
+    color: #3d0000;
+    padding: 5px;
+}
+
+li {
+    list-style: none;
+
+}
+
+.file {
+    border-bottom: 2px solid #3d000075;
+    border-radius: 1px;
+}
+
+.shared-with {
+    margin: 0px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    white-space: nowrap;
+}
+
+
+.top {
+    background-color: #ddcab1;
+    border: 2px solid #ddcab1;
+    border-style: outset;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.file-list {
+    width: 45%;
+    padding: 15px;
+    min-width: 300px;
+}
+
+#all-files {
+    /* background-color: cadetblue; */
+    overflow: scroll;
+    display: flex;
+}
+
+#user-files {
+    border-right: 2px solid #3d0000;
+}
+
+#files-shared-from {
+    flex: 1;
+}

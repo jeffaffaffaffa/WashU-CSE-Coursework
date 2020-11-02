@@ -1,0 +1,27 @@
+body {
+  background-color: #89cff0;
+  color: #800080;
+  text-align: center;
+  text-shadow: 2px 2px #694489;
+  font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  line-height: 1.6;
+}
+
+p {
+  font-size: 26px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+img {
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+#jeff {
+  font-family: cursive;
+}

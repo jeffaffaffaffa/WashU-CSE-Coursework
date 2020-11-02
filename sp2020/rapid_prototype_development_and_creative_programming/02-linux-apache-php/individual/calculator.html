@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <form action="info.php" method="GET">
+        <p>
+            <input type="text" name="firstnumber" id="firstinput"/>
+        </p>
+        <p>
+            <input type="radio" name="operation" value="addd" id="add"/><label for="add">+</label>
+            <input type="radio" name="operation" value="subb" id="sub"/><label for="sub">-</label>
+            <input type="radio" name="operation" value="multt" id="mult"/><label for="mult">*</label>
+            <input type="radio" name="operation" value="divv" id="div"/><label for="div">/</label>
+        </p>
+        <p>
+            <input type="text" name="secondnumber" id="secondinput"/>
+        </p>
+        <p>
+            <input type="submit" value="Calculate"/>
+            <input type="reset" value="Clear"/>
+        </p>
+    </form>
+</body>
+</html>

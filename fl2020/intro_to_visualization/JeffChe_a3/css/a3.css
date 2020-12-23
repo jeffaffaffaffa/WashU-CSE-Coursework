@@ -1,0 +1,133 @@
+body {
+    background-color: #F8F8F8;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+#title {
+    padding-top: 20px;
+}
+
+#body {
+    margin: auto;
+    width: 720px;
+    background-color: #E0E0E0;
+    border-radius: 25px;
+}
+
+.form-inline {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-control {
+    background: rgb(218, 215, 209);
+    border: 1px solid rgb(48, 47, 47);
+    width: 250px;
+}
+
+#intro {
+    width: 680px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#barchart-label {
+    text-transform: capitalize;
+}
+
+#barchart-area {
+    width: 500px;
+    height: 1000;
+    margin: 0 auto;
+}
+
+#scatterplot-area {
+    width: 500px;
+    height: 1200px;
+    margin: 0 auto;
+}
+
+#menu {
+    text-align: center;
+}
+
+.float-child {
+    width: 50%;
+    height: 320px;
+    float: left;
+}
+
+h1, h2, h3, h4, h5, h6, #my_info {
+    text-align: center;
+}
+
+.scoreLabel {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.tooltip {
+    display: inline;
+    position: fixed;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+.axis-title {
+    font-size: 12px;
+}
+
+#reg-results {
+    text-align: center;
+}
+
+.stackedBarLabels, .stackedBarPercents {
+    font-size: 12px;
+}
+
+#toolbar {
+    background-color: rgb(88, 88, 88);
+    overflow: hidden;
+}
+
+#toolbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#toolbar a:hover {
+    background-color: #ddd;
+    color: rgb(48, 47, 47);
+}
+
+#toolbar a.active {
+    background-color: grey;
+    color: white;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}

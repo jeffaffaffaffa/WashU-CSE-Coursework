@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <title>Process Book</title>
+
+        <link rel="stylesheet" href="css/process.css">
+    </head>
+    <body>
+        <div id="body">
+            <h1 class="body_el" id="title">Process Book</h1>
+            <p id="my_info">Jeff Che | 464957 | 11/2/2020</p>
+
+            <div id="toolbar">
+                <a class="active" href="a3.html">Home</a>
+                <a href="process.html">Process Book</a>
+            </div>
+
+            <h3 class="body_el">Answering process book questions:</h3>
+            <h4 class="body_el">What do you want to achieve with the visualization?</h4>
+            <p class="body_el">
+                I want to explore how "positive" and "negative" certain stories are using sentiment analysis of ANIFF words in
+                each story. I think that this would be really interesting to see, especially if a viewer has read some of the 
+                stories and can see how the data results match up against their own "sense" of the story from reading it. I want to display 
+                relevant stats using bar charts for this part.
+            </p>
+            <p class="body_el">
+                I also want to see if there is any meaningful trends/correlations within the data. Notably, between each story's overall 
+                score determined by ANIFF word scores and its comparative score, which is calculated according to the formula I outlined 
+                in the html file (on the web page intro). Since the overall score is determined by just the words that are ANIFF-compatible, 
+                I think that it is reasonable to expect that the sentiment analysis performed using ANIFF is not a complete picture for each 
+                story. The comparative score is a much more "general" score that takes into accound the entire size of the story. The comparative 
+                scores are still relative to the sentiment score, but "averaged" out over each story (all words) to present a metric that is better for showing 
+                just how positive or negative a story is (I think that it can also be seen as a metric that shows the story's tendency towards 
+                negative or positive. -5 and 5 are the extremes, and something like -0.05 can mean that it has a slight negative tendency). 
+                I think that it would be really interesting to see (visually and mathematically) how the 
+                two variables correlate with each other. I want to show this part using a scatterplot and possibly a regression line.
+            </p>
+
+            <p class="body_el">
+                Overall, I want to show the good/bad word stats breakdown for each story, their respective scores, and how each story's 
+                sentiment score corresponds with its comparative score. I also want to show that a lot of sentiment analysis, etc. may 
+                really not be representative of what a story truly conveys (positive or negative vibes) when compared to a reader's 
+                personal experience or idea of a story. Some results may be expected and some may be surprising. Maybe using the overall 
+                sentiment score to determine a comparative score results in more "acceptable" data in the sense that it is more "equalized" 
+                and can be less jarring (i.e. -52 vs. -0.006).
+            </p>
+
+            <h4 class="body_el">What tasks do you want to support?</h4>
+            <p class="body_el">
+                I want to allow the user to select from all of the stories and look at the stats for each individual story, displayed using 
+                barplots, etc. I also want to display all of the stories' data on a scatterplot/related visualization. Tooltips would be nice to 
+                include too in the overall design (mouse-over interations).
+            </p>
+            
+            <h4 class="body_el">What designs with help you achieve these designs?</h4>
+            <div class="body_el">
+                <ol>
+                    <li>
+                        Bar chart
+                        <ol>
+                            <li>
+                                Stacked bar chart
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Scatterplot
+                        <ol>
+                            <li>
+                                Regression line
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <h4 class="body_el">Sketch of ideas:</h4>
+            <img class="images" src="images/sketch.jpg" alt="my sketch">
+
+            <h4 class="body_el">Justifications of final design:</h4>
+            <p class="body_el">
+                I ended up discarding the relative size of circles idea and opted for all bar charts in the first part. I think 
+                it displays the idea better and is more easily understood. Two circles side-by-side can be a bit 
+                challenging to look at, especially when the sizes are very similar. I also implemented tool tips for the scatterplot and 
+                "on hover" effects for the bar charts. I think these also add to the overall presentation. Overall, everything turned out well and I think I was 
+                able to get everything I had sketched out into code and onto the web page. It certainly looks much better than what 
+                I can draw &#128517;.
+            </p>
+
+            <h4 class="body_el">Other notes:</h4>
+            <p class="body_el">
+                I am using browserify to enable node packages in the browser and npm sentiment for sentiment analysis. I used Python's sklearn package to 
+                run the linear regression on my data (using Google Colab). Additionally, both .html files 
+                pass the W3 HTML Validator (one warning about an empty header, but it is populated with Javascript).
+            </p>
+            <h4 class="body_el">Resources:</h4>
+            <div class="body_el">
+                <ol>
+                    <li><a href="https://github.com/d3/d3-fetch" target="_blank">D3 Fetch</a></li>
+                    <li><a href="https://www.npmjs.com/package/sentiment" target="_blank">Sentiment</a></li>
+                    <li><a href="https://www.npmjs.com/package/browserify" target="_blank">Browserify</a></li>
+                    <li><a href="https://stackoverflow.com/questions/21842384/importing-data-from-multiple-csv-files-in-d3" target="_blank">Importing data from multiple CSV files in D3</a></li>
+                    <li><a href="https://stackoverflow.com/questions/10396074/remove-specific-characters-from-a-string-in-javascript" target="_blank">Removing specific characters from a string in Javascript</a></li>
+                    <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <title>A3 - Once Upon a Time</title>
+
+        <link rel="stylesheet" href="css/a3.css">
+    </head>
+    <body onload="changeStory()">
+        <div id="body">
+            <h1 id="title">Fairy Tales</h1>
+            <p id="my_info">Jeff Che | 464957 | 11/2/2020</p>
+
+            <h2>Sentiment analysis of various fairy tales</h2>
+
+            <div id="toolbar">
+                <a class="active" href="a3.html">Home</a>
+                <a href="process.html">Process Book</a>
+            </div>
+    
+            <div id="intro">
+                <p>
+                    I am performing sentiment analysis on each fairy tale with the sentiment
+                    npm package (usable in browser with browserify). The sentiment analysis is done 
+                    with the <a href="http://www2.imm.dtu.dk/pubdb/pubs/6010-full.html" target="_blank">AFINN-165</a> wordlist 
+                    and <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0144296" target="_blank">Emoji Sentiment Ranking</a> (when applicable). 
+                    Refer to my process book page for more details.
+                </p>
+                <p>
+                    Choose from the selection menu to see a story's sentiment data. The overall sentiment score is the result of summing up 
+                    every "significant" word's AFINN score (a score between -5 and 5, where negative means "bad" and positive means "good"). 
+                    The comparative score is score divided by the 
+                    total number of words in the story - creates a metric that tells us the "average score" or a story's "tendency" towards being 
+                    negative or positive. For example, 
+                    if there are 200 words and each word is overwhelmingly positive and gets a score of 5, the total score is 1000 and the 
+                    comparative score is 1000/200 = 5. In some sense, it is another way to see if the story leans towards the positive 
+                    or negative side (can call it the measure of "overall tone").
+                </p>
+            </div>
+    
+            <form id="menu" class="form-inline">
+                <div class="form-group">
+                    <label for="ranking-type">Choose a story:</label>
+                    <select class="form-control" id="ranking-type"></select>
+                </div>
+            </form>
+    
+            <div id="barchart-area">
+                <!-- html validator flag this with a warning, but header is populated from js -->
+                <h4 id="barchart-label"></h4>
+                <div class="float-child" id="numWordsChart"></div>
+                <div class="float-child" id="scores"></div>
+            </div>
+    
+            <div id="scatterplot-area">
+                <h4><u>Overall sentiment score vs. comparative score scatterplot:</u></h4>
+                <div id="scatterplot"></div>
+                <h4><u>Scatterplot data regression results:</u></h4>
+                <div id="reg-results"></div>
+                <div id="discussion">
+                    <p>
+                        Visually, the linear regression model seems to generalize well for the data and has a positive correlation. 
+                        The regression line (in black) follows the general trend well. However, the <var>R</var><sup>2</sup>
+                        shows that only 49.8% of the dependent variable's variance is explained by the independent variable, but this is still
+                        a very acceptable result. Can conclude that the overall sentiment score is decently good at predicting what the 
+                        comparative score is.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+
+        <script src="https://d3js.org/d3.v6.js"></script>
+        <script src="js/bundle.js"></script>
+        <script src="js/sentiment.js"></script>
+    </body>
+</html>

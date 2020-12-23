@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Visualization Critique (Assignment 0)</title>
+        <link rel="stylesheet" href="a0_style.css">
+    </head>
+    <body>
+        <div id="body">
+            <h1 class="header"><u>Visualization Critique (Assignment 0)</u></h1>
+
+            <p class="text"><b>A visualization that I like:</b></p>
+            <img id="good_vis" src="covid_cases.png" alt="us covid cases per 100k"/>
+            <p class="text">I like <a href="https://covid.cdc.gov/covid-data-tracker/#cases_casesper100k" target="__blank">this one</a> from the CDC, because it is informative and looks clean and pretty, even at a glance. The colors correspond
+                to how dense COVID cases are in each state and they make sense. They go from very light yellow up to a dark autumn red.
+                Based off of my natural intuition, I was able to immediately understand, albeit generally, which states have more
+                cases per 100,000 people. A quick look at the legend helps me see exactly how dense the cases are. On the actual
+                website, hovering the cursor over each state provides even more information, such as exact numbers, which is very helpful.
+            </p>
+
+            <p class="text"><b>A visualization that I don't like:</b></p>
+            <img id="bad_vis" src="us_race_eth.jpg" alt="percent of us pop by race and ethnicity"/>
+            <p class="text">I don't like <a href="https://io9.gizmodo.com/nbc-news-creates-a-racially-insensitive-time-traveling-1564202280" target="__blank">this one</a> from NBC, because it is hectic and at a glance, the reader 
+                can't even begin to make out what it is trying to convey - bad storytelling. Looking at it more closely, I am able to see that it 
+                is trying to show the change in the makeup of the US population over time (rather badly - the time intervals are too far apart and much too infrequent, with only 3 points for 100 years?!). It should be a 
+                stacked line chart with more data points, not some colorful blob of color in the shape of the US. Its shape makes it look like it is related to a map of some sort, like maybe the air currents over North America 
+                (with the red being warm air maybe?). Additionally, the percentages don't even add up correctly to 100%. Missing data? No axis labels? This one overall is a mess.
+            </p>
+
+            <p class="text"><b>Simple redesign of the previous visualization:</b></p>
+            <img class="redesign" src="new_plot1.png" alt="percent of us pop by race and ethnicity edit 1"/>
+            <img class="redesign" src="new_plot2.png" alt="percent of us pop by race and ethnicity edit 2"/>
+            <img class="redesign" src="new_plot3.png" alt="percent of us pop by race and ethnicity edit 3"/>
+            <p class="text">In my redesign, I cleaned up the plot and simplified everything so it looks cleaner. I made each race/ethnicity its own 
+                line, each with different colors to display the trends more clearly. Overall, it's a very simple plot with not much to it, but 
+                is much easier to absorb and understand. If I knew the source(s) of the data, I would try to add more data points, because 50 years is a pretty large gap between each point (not to 
+                mention that there are only three points for each and the third point is a prediction for the future).
+            </p>
+            <p class="text"><u>Fixes to problems I mentioned earlier:</u></p>
+            <ol class="list">
+                <li>All percentages add to a total of 100 (assumed a few values for the sake of completeness).</li>
+                <li>Plot type better suited for the data (stacked lines).</li>
+                <li>No weird/unnecessary plot shape.</li>
+                <li>Cleaner, more easily noticeable trends.</li>
+                <li>Cleaner looking legend.</li>
+                <li>Added X and Y axis labels.</li>
+                <li>Using Plot.ly in Jupyter Lab, plot is interactable. Hovering over lines shows values, as displayed in screenshots above.</li>
+            </ol>
+
+            <p class="text"><b>My code to generate the Plot.ly plot:</b></p>
+            <img class="other" src="python_code.png" alt="python code using plotly"/>
+
+            <p class="text"><b>Help from:</b></p>
+            <p class="text"><a href="https://plotly.com/python/getting-started/#initialization-for-online-plotting" target="__blank">Plot.ly Docs</a></p>
+            <p class="text"><a href="https://towardsdatascience.com/getting-started-with-plot-ly-3c73706a837c" target="__blank">Towards Data Science Examples</a></p>
+            <p class="text">Jeff Che | 464957 | 9/17/2020</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+body {
+    background-color: #F8F8F8;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    color: black;
+}
+
+#body {
+    margin: auto;
+    width: 700px;
+    background-color: #E0E0E0;
+    border-radius: 25px;
+}
+
+.header {
+    text-align: center;
+    padding: 10px;
+    width: 75%;
+    margin: auto;
+}
+
+.bar_chart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 360px;
+    height: 220px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 3px solid #D3D3D3;
+}
+
+.bar {
+    cursor: pointer;
+    fill: black;
+}
+
+.bar:hover,
+.bar:focus {
+    fill: red !important;
+}
+
+.line_chart,
+.area_chart,
+.scatterplot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 360px;
+    height: 260px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 3px solid #D3D3D3;
+}
+
+.line {
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+}
+
+.area_line {
+    stroke: black;
+    stroke-width: 2px;
+    fill-rule: nonzero;
+}
+
+.covered_pts {
+    fill: white;
+}
+
+.circle {
+    cursor: pointer;
+    stroke: grey;
+    fill: grey;
+}
+
+.circle:hover,
+.circle:focus {
+    fill: red !important;
+}
+
+.point_coord:hover,
+.point_coord:focus {
+    fill: red !important;
+}
